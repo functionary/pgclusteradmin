@@ -1202,7 +1202,7 @@ func serviceadmin(row Row, act string, a_mode string, username string) Row {
 		return row
 	}
 	//判断mode是否正确
-	if a_mode != "smart" && a_mode != "fast" && a_mode != "immediate" && (act == "stop" && act == "restart") {
+	if a_mode != "smart" && a_mode != "fast" && a_mode != "immediate" && (act == "stop" || act == "restart") {
 		row.Return_msg = "stop或restart使用模式mode[ " + act + " ]不存在"
 		return row
 	}
